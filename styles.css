@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url(images/lewismillerdesign.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+   
+span{
+    background-color: rgb(80, 17, 129);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:8px;
+    border-radius: 10px;
+}
+
+.atom{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ntoz{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+    background-color: white;
+   margin-top: 30px;
+    width: 900px;
+    height: 450px;
+    border-radius: 20px;
+
+}
+
+.letters{
+   /* background-color: rgb(168, 117, 188); */
+   width: 800px;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+  
+}
+
+.hangman{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.icons{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.mysteryword{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
