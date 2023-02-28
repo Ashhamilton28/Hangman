@@ -31,32 +31,65 @@
 // option to play music?
 
 
-// a phrases option
-// let phrases = ["Once in a blue moon", "A piece of Cake", "Don't judge a book by its cover", "Bite The bullet", "It's brick outside", "You be aight"]
 
 
 
 // random mystery words
-let words =["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", "Zestfulness", "Overzealous","Cynical", "Javascript", "Baconeggandcheese", "The"];
+let words =["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", "Zestfulness", "Overzealous","Cynical", "Javascript", "Baconeggandcheese", "The", "And"];
 
-//code to pick a word at random from the words array
-words = words[Math.floor(Math.random() * words.length)];
+let mysteryWord = ""
+let amountOfChances = 8
+let chancesTaken= 0
+
+
+// function to pick a random word from the words array
+let getMysteryWord = function(){
+    return  words[Math.floor(Math.random() * words.length)];
+}
+mysteryWord=getMysteryWord()
+console.log(mysteryWord)
+
+
 
 
 //for loop that which makes as many underscores as there are letters in the words
-// let answerArray = [];
-// for(let i=0; i<words.length; i++){
-//     answerArray[i] = "_";
-// }
+let underscores = [];
+for(let i=0; i<mysteryWord.length; i++){
+    underscores[i] = "_";
+}
+console.log(underscores)
 
-// let remainingLetters = words.length;
+let remainingLetters= mysteryWord.length
 
-// console.log(words)
+let aThroughM = document.querySelector(".atom")
+aThroughM.addEventListener("click", handleClick)
 
-// while (remainingLetters > 0){
-//     alert(answerArray.join(" "));
-// }
-
-// let playersGuess = prompt(`pick a letter or quit game?`)
+let nThroughz = document.querySelector(".ntoz")
+nThroughz.addEventListener("click", handleClick)
 
 
+
+function handleClick(e){
+    console.log(e.target)
+
+    //if letter if not found remove a flower
+    
+    let flowers= document.querySelectorAll('.littleflower')
+    flowers[flowers.length -1].remove()
+
+}
+
+let underscoreDisplay= document.querySelector('.mysteryword')
+// underscoreDisplay.getMysteryWord()
+// underscoreDisplay
+// underscoreDisplay.innerHTML= "underscores"
+
+// underscores.createElement
+
+
+//underscores match the amount of letters in mystery word
+for (let i = 0; i<mysteryWord.length;i++){
+    let span = document.createElement("span")
+    span.innerHTML='_'
+    underscoreDisplay.append(span)
+}

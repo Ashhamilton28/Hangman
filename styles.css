@@ -10,14 +10,14 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url(images/lewismillerdesign.jpg);
+    background-image: url(images/lewismillerdesign2.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
 }
 
    
 span{
-    background-color: rgb(80, 17, 129);
+    background-color: rgb(148, 7, 139);
     width: 40px;
     height: 40px;
     display: flex;
@@ -25,6 +25,7 @@ span{
     align-items: center;
     margin:8px;
     border-radius: 10px;
+    color: white;
 }
 
 .atom{
@@ -44,7 +45,7 @@ span{
     /* flex-direction: row; */
     background-color: white;
    margin-top: 30px;
-    width: 900px;
+    width: 1000px;
     height: 450px;
     border-radius: 20px;
 
@@ -65,6 +66,7 @@ span{
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+    color:rgb(148, 7, 120);
 }
 
 .icons{
@@ -76,4 +78,16 @@ span{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+}
+
+
+/* change color of letters on click */
+span active{
+    background-color: rgb(191, 53, 145);
+    color: rgb(97, 10, 111);
+}
+
+.littleflower{
+    width: 50px;
+    height: 50px;
 }
