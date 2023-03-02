@@ -10,7 +10,7 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url(images/lewismillerdesign2.jpg);
+    background-image: url(images/lewismillerdesign.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
 }
@@ -77,7 +77,7 @@ span{
 .mysteryword{
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 

@@ -69,15 +69,34 @@ nThroughz.addEventListener("click", handleClick)
 
 
 
+
+//function to remove flowers only if the letter is incorrect
 function handleClick(e){
-    console.log(e.target)
 
     //if letter if not found remove a flower
-    
-    let flowers= document.querySelectorAll('.littleflower')
-    flowers[flowers.length -1].remove()
+   
+    if (mysteryWord.toUpperCase().includes(e.target.innerHTML) == true){
+        //Update the Array to change letter from underscore
+       
+    } else {
+        let flowers = document.querySelectorAll('.littleflower')
+        flowers[flowers.length -1].remove()
+    }
+   
+       
 
 }
+
+
+// function handleClick(e){
+// //     console.log(e.target)
+
+//     //if letter if not found remove a flower
+    
+//     let flowers= document.querySelectorAll('.littleflower')
+//     flowers[flowers.length -1].remove()
+
+// }
 
 let underscoreDisplay= document.querySelector('.mysteryword')
 // underscoreDisplay.getMysteryWord()
