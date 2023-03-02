@@ -101,8 +101,16 @@ for (let i = 0; i < mysteryWord.length; i++) {
 
 
 //change color of letters after click
-// let theAlphabet = document.querySelectorAll("span")
+
+let theAlphabet = document.querySelectorAll("span")
 
 
-// theAlphabet.addEventListener('click', () => theAlphabet.style.background="#808080") 
+for (let i = 0; i < theAlphabet.length; i++) {
 
+    theAlphabet[i].addEventListener("click", function() {
+    
+    theAlphabet[i].style.background="#808080"
+    
+    });
+    
+    }
