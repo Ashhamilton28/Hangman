@@ -10,7 +10,7 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url(images/lewismillerdesign.jpg);
+    background-image: url(images/lewismillerdesign2.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
 }
@@ -18,12 +18,12 @@ body{
    
 span{
     background-color: rgb(148, 7, 139);
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:8px;
+    margin:5px;
     border-radius: 10px;
     color: white;
 }
@@ -45,8 +45,8 @@ span{
     /* flex-direction: row; */
     background-color: white;
    margin-top: 30px;
-    width: 1000px;
-    height: 450px;
+    width: 750px;
+    height: 420px;
     border-radius: 20px;
 
 }
@@ -71,8 +71,8 @@ span{
 
 .icons{
     text-align: center;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 .mysteryword{
     display: flex;
@@ -82,10 +82,10 @@ span{
 
 
 /* change color of letters on click */
-span active{
-    background-color: rgb(191, 53, 145);
-    color: rgb(97, 10, 111);
-}
+/* span:active{
+    background-color: rgb(171, 169, 170);
+    color: rgb(65, 65, 65);
+} */
 
 .littleflower{
     width: 50px;

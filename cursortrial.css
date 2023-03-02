@@ -1,0 +1,36 @@
+:root{
+    --color: pink;
+    --size: 0;
+}
+
+.flowercontainer{
+    position:absolute;
+    opacity: 1;
+}
+
+.flower{
+    width: var(--size);
+    height: var(--size);
+    transform: rotate(45deg);
+    transform-origin: center;
+    position: relative;
+    background: var(--color);
+    margin: 10px, auto;
+}
+
+.flower:before, .flower:after{
+    content: "";
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: var(--color);
+}
+
+.flower::before{
+    left: calc(var(--size)/2*-1);
+}
+
+.flower:after{
+    top: calc(var(--size)/2*-1);
+}
