@@ -24,7 +24,7 @@
 let words = ["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", "Zestfulness", "Overzealous", "Cynical", "Javascript", "Baconeggandcheese", "The", "And"];
 
 let mysteryWord = ""
-let amountOfChances = 8
+let amountOfChances = 7
 let chancesTaken = 0
 
 
@@ -60,15 +60,24 @@ nThroughz.addEventListener("click", handleClick)
 function handleClick(e) {
 
     //if letter if not found remove a flower
+if(amountOfChances<1){
+    confirm("Oh no! You Lose!")
+}else{
+
 
     if (mysteryWord.toUpperCase().includes(e.target.innerHTML) == true) {
         //Update the Array to change letter from underscore
 
     } else {
         let flowers = document.querySelectorAll('.littleflower')
+        amountOfChances-=1
         flowers[flowers.length - 1].remove()
+       
+        console.log(flowers)
+        console.log(flowers.length)
+        console.log(amountOfChances)
     }
-
+}
 
 
 }
@@ -96,6 +105,7 @@ let underscoreDisplay = document.querySelector('.mysteryword')
 for (let i = 0; i < mysteryWord.length; i++) {
     let span = document.createElement("span")
     span.innerHTML = '_'
+    span.classList.add('underscore');
     underscoreDisplay.append(span)
 }
 
@@ -104,13 +114,63 @@ for (let i = 0; i < mysteryWord.length; i++) {
 
 let theAlphabet = document.querySelectorAll("span")
 
-
 for (let i = 0; i < theAlphabet.length; i++) {
 
     theAlphabet[i].addEventListener("click", function() {
     
-    theAlphabet[i].style.background="#808080"
+    selectedLetter(theAlphabet[i].innerText)
+    
+    theAlphabet[i].style.background="#d3d3d3"
     
     });
     
     }
+    
+
+    //function to replace underscores with letters
+   function selectedLetter(letter){
+// decrement the amount of chances
+// amountOfChances = amountOfChances - 1 // decrements amount of choices
+//  console.log(amountOfChances)
+const lowerCaseLetter = letter.toLowerCase()
+
+const lowerCaseMysteryWord = mysteryWord.toLowerCase()
+
+
+// "pancakes"
+// letter exists in the mystery word
+// "p"
+
+//put code in for loop
+let letterExistsOnMysteryWord = lowerCaseMysteryWord.includes(lowerCaseLetter)
+
+if(letterExistsOnMysteryWord) {
+// <span class="underscore"></span>
+let underscoresToReplace = document.querySelectorAll(".underscore")
+// "pancakes"
+// "p"
+// 
+let letterIndexInTheMysteryWord = lowerCaseMysteryWord.indexOf(lowerCaseLetter) // 0
+// let underScoresToReplace =  [<span>_</span>,<span>_</span>,<span>_</span>]
+// underscoresToReplace[5]
+underscoresToReplace[letterIndexInTheMysteryWord].innerText = lowerCaseLetter.toUpperCase()
+// If player successfully select all the words
+if((letterIndexInTheMysteryWord +1) == underscoresToReplace.length){
+
+confirm("Congratulations! You win!")
+
+}else if (amountOfChances < 1){
+ console.log(amountOfChances)
+confirm("Oh no! You Lose!")
+
+}
+
+}
+
+}
+
+
+
+        
+        
+
