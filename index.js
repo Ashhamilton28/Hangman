@@ -24,7 +24,7 @@
 let words = ["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", "Zestfulness", "Overzealous", "Cynical", "Javascript", "Baconeggandcheese", "The", "And"];
 
 let mysteryWord = ""
-let amountOfChances = 7
+let amountOfChances = 8
 let chancesTaken = 0
 
 
@@ -115,59 +115,71 @@ for (let i = 0; i < mysteryWord.length; i++) {
 let theAlphabet = document.querySelectorAll("span")
 
 for (let i = 0; i < theAlphabet.length; i++) {
-
     theAlphabet[i].addEventListener("click", function() {
-    
     selectedLetter(theAlphabet[i].innerText)
-    
     theAlphabet[i].style.background="#d3d3d3"
-    
-    });
-    
-    }
+  });
+}
     
 
     //function to replace underscores with letters
-   function selectedLetter(letter){
-// decrement the amount of chances
-// amountOfChances = amountOfChances - 1 // decrements amount of choices
-//  console.log(amountOfChances)
-const lowerCaseLetter = letter.toLowerCase()
+function selectedLetter(letter){
+    // decrement the amount of chances
+    // amountOfChances = amountOfChances - 1 // decrements amount of choices
+    //  console.log(amountOfChances)
+    const lowerCaseLetter = letter.toLowerCase()
+    const lowerCaseMysteryWord = mysteryWord.toLowerCase()
 
-const lowerCaseMysteryWord = mysteryWord.toLowerCase()
+    // "pancakes"
+    // letter exists in the mystery word
+    // "p"
 
+    //put code in for loop
+    let letterExistsOnMysteryWord = lowerCaseMysteryWord.includes(lowerCaseLetter)
 
-// "pancakes"
-// letter exists in the mystery word
-// "p"
+    if(letterExistsOnMysteryWord) {
+        let timesTheLetterOccursInTheMysteryWord = lowerCaseMysteryWord.split(lowerCaseLetter).length-1
+        let letterIndexInTheMysteryWord = lowerCaseMysteryWord.indexOf(lowerCaseLetter) // 0
+        let underscoresToReplace = document.querySelectorAll(".underscore")
+        underscoresToReplace[letterIndexInTheMysteryWord].innerText = lowerCaseLetter.toUpperCase()                    
+        let mysteryWordUppercase = mysteryWord.toUpperCase()
 
-//put code in for loop
-let letterExistsOnMysteryWord = lowerCaseMysteryWord.includes(lowerCaseLetter)
+        for(let i = 0; i < timesTheLetterOccursInTheMysteryWord; i++)
+        {        
+            for(let k = letterIndexInTheMysteryWord-1; k < lowerCaseMysteryWord.length; k++){
+                if(mysteryWordUppercase[k] == letter){
+                    underscoresToReplace[k].innerText = lowerCaseLetter.toUpperCase()                     
+                }
+            }
+        }
 
-if(letterExistsOnMysteryWord) {
-// <span class="underscore"></span>
-let underscoresToReplace = document.querySelectorAll(".underscore")
-// "pancakes"
-// "p"
-// 
-let letterIndexInTheMysteryWord = lowerCaseMysteryWord.indexOf(lowerCaseLetter) // 0
-// let underScoresToReplace =  [<span>_</span>,<span>_</span>,<span>_</span>]
-// underscoresToReplace[5]
-underscoresToReplace[letterIndexInTheMysteryWord].innerText = lowerCaseLetter.toUpperCase()
-// If player successfully select all the words
-if((letterIndexInTheMysteryWord +1) == underscoresToReplace.length){
+        // <span class="underscore"></span>
+        // "pancakes"
+        // "p"
+        // 
 
-confirm("Congratulations! You win!")
-
-}else if (amountOfChances < 1){
- console.log(amountOfChances)
-confirm("Oh no! You Lose!")
-
+        // let underScoresToReplace =  [<span>_</span>,<span>_</span>,<span>_</span>]
+        // underscoresToReplace[5]
+        
+        let revealedLetters = getRevealedLetters(underscoresToReplace)
+        // If player successfully select all the words
+        if(revealedLetters == mysteryWordUppercase){
+          confirm("Congratulations! You win!")
+        }
+    }
 }
 
+function getRevealedLetters(underscores){
+    let revealedLetterAndUndescores = ''
+
+    for (let i = 0; i < underscores.length; i++) {
+        revealedLetterAndUndescores = revealedLetterAndUndescores + underscores[i].innerText
+    }
+
+   return revealedLetterAndUndescores
 }
 
-}
+
 
 
 
