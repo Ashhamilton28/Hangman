@@ -21,7 +21,7 @@
 
 
 // random mystery words
-let words = ["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", "Zestfulness", "Overzealous", "Cynical", "Javascript", "Baconeggandcheese", "The", "And"];
+let words = ["Pancakes", "Butterflies", "Gallivanting", "Moisturized", "Nostalgia", "Winterized", "Birthday", "Artistic", "Colorful", "Homepage", "Technology", , "Zestfulness", "Overzealous", "Cynical", "Javascript", "Baconeggandcheese", "The", "And", "Software"];
 
 let mysteryWord = ""
 let amountOfChances = 8
