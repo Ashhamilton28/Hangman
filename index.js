@@ -47,6 +47,8 @@ console.log(underscores)
 
 let remainingLetters = mysteryWord.length
 
+
+//add event listener so that the letters are clickable
 let aThroughM = document.querySelector(".atom")
 aThroughM.addEventListener("click", handleClick)
 
@@ -66,7 +68,7 @@ if(amountOfChances<1){
 
 
     if (mysteryWord.toUpperCase().includes(e.target.innerHTML) == true) {
-        //Update the Array to change letter from underscore
+        // if else statement to Update the Array to change letter from underscore
 
     } else {
         let flowers = document.querySelectorAll('.littleflower')
@@ -101,7 +103,7 @@ let underscoreDisplay = document.querySelector('.mysteryword')
 // underscores.createElement
 
 
-//underscores match the amount of letters in mystery word
+//for loop so that underscores match the amount of letters in mystery word
 for (let i = 0; i < mysteryWord.length; i++) {
     let span = document.createElement("span")
     span.innerHTML = '_'

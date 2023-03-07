@@ -30,7 +30,7 @@ function createSpans() {
 
 createSpans()
 
-/// We need to get all the span elements. make the letters clickable
+/// need to get all the span elements. make the letters clickable
 const letters = document.querySelectorAll('.letter')
 
 letters.forEach((span)=>{
